@@ -1,0 +1,76 @@
+/*---------- MAIN ----------*/
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+/*---------- HEADER ----------*/
+header {
+	border: 2px solid #000;
+	background-color: #FFB4B0;
+	margin-bottom: 10px;
+}
+
+.nav {
+	height: 20px;
+	padding: 10px;
+}
+
+.nav > li {
+	float: left;
+	list-style-type: none;
+	margin: 0 10px;
+}
+
+.nav a:link {
+	color: #000;
+}
+
+.nav a:visited {
+	color: #000;
+}
+
+.nav a:hover {
+	color: #fff;
+}
+/*---------- LEFT CONTROLS ----------*/
+.left--controls {
+	background-color: #4DD7FA;
+	border: 2px solid #000;
+	float: left;
+	padding: 20px;
+}
+
+.left--controls input[type=checkbox] {
+    display: block;
+}
+
+
+/*---------- SONG LIST ----------*/
+.song--list {
+	background-color: #FEFAC0;
+	border: 2px solid #000;
+	float: right;
+	padding: 20px;
+
+}
+
+.song--list span {
+	color: #785616;
+	font-size: 1.3em;
+}
+
+.song--list ul {
+	margin: 0;
+	padding: 0;
+}
+
+.song--list li {
+	list-style-type: none;
+}
+
+/*---------- ----------*/

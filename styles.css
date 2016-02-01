@@ -20,6 +20,14 @@ a {
 	float:right;
 }
 
+.visible {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
 /*---------- HEADER ----------*/
 header {
 	border: 2px solid #000;
@@ -59,6 +67,7 @@ x.nav li::after:last-child {
 	color: #fff;
 }
 
+/*----------------- LIST MUSIC VIEW START -----------------*/
 /*---------- LEFT CONTROLS ----------*/
 .left--controls {
 	background-color: #4DD7FA;
@@ -135,4 +144,12 @@ x.nav li::after:last-child {
 	list-style-type: none;
 }
 
-/*---------- ----------*/
+/*----------------- LIST MUSIC VIEW END -----------------*/
+
+/*----------------- ADD MUSIC VIEW START -----------------*/
+.add-music-view {
+  width: 300px;
+  margin: 0 auto;
+}
+
+/*----------------- ADD MUSIC VIEW END -----------------*/

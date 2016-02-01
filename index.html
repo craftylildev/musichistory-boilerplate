@@ -9,134 +9,143 @@
 
 <body>
 	<div class="wrapper">	
-		<!----------- TOP HEADER ---------->
+		<!-- TOP HEADER -->
 		<header>
 			<nav>
 				<ul class="nav">
-					<li><a href="#">View Music</a></li>
-					<li><a href="#">Add Music</a></li>
-					<li><a href="#">Profile</a></li>
+					<li><a id ="list-music-link" href="#">List Music</a></li>
+					<li><a id ="add-music-link" href="#">Add Music</a></li>
 				</ul>
 			</nav>
 		</header>
-
-		<!----------- LEFT CONTROLS ---------->
-		<section class="left--controls">
-			<form action="#" method="post">
-				<!-- song length slider -->
-				<div class="slider">
-					<label>Song length:</label>
-					<br>
-
-					<input id="slider1" type="range" min="100" max="500" step="10" />
-				</div>
-
-				<!-- artist options -->
-				<div class="drop--down">
-					<label>Artist:</label>	
-					<br>
-					<select name="artistSel">
-						<option value="" selected disabled="disabled">Options</option>
-						<option value="Depeche Mode">Depeche Mode</option>
-						<option value="Nine Inch Nails">Nine Inch Nails</option>
-						<option value="Tool">Tool</option>
-						<option value="Soundgarden">Soundgarden</option>
-						<option value="The Cure">The Cure</option>
-					</select>
-				</div>
-					
-				<!-- album options -->
-				<div class="drop--down">
-					<label>Album:</label>
-					<br>
-					<select name="albumSel">
-						<option value="" selected disabled="disabled">Options</option>
-						<option value="Violator">Violator</option>
-						<option value="Pretty Hate Machine">Pretty Hate Machine</option>
-						<option value="Undertow">Undertow</option>
-						<option value="Badmotorfinger">Badmotorfinger</option>
-						<option value="Wish">Wish</option>
-					</select>	
-				</div>
-
-				<!-- genre check boxes-->
-				<div class="check--box">
-					<label>Genre:</label>
-					<br>
-					
-					<div class="optSection">
-						<div class="optLine">
-							<div class="chkOpt left">
-								<input type="checkbox" name="chkGenre" value="Synthpop">
-								<span>Synthpop</span>
+		<!-- LIST MUSIC START -->
+		<article id="list-music-view">
+			<!-- LIST MUSIC - left controls -->
+			<section class="left--controls">
+				<form action="#" method="post">
+					<!-- LIST MUSIC - song length slider -->
+					<div class="slider">
+						<label>Song length:</label>
+						<br>
+						<input id="slider1" type="range" min="100" max="500" step="10" />
+					</div>
+					<!-- LIST MUSIC - artist options -->
+					<div class="drop--down">
+						<label>Artist:</label>	
+						<br>
+						<select name="artistSel">
+							<option value="" selected disabled="disabled">Options</option>
+							<option value="Depeche Mode">Depeche Mode</option>
+							<option value="Nine Inch Nails">Nine Inch Nails</option>
+							<option value="Tool">Tool</option>
+							<option value="Soundgarden">Soundgarden</option>
+							<option value="The Cure">The Cure</option>
+						</select>
+					</div>
+					<!-- LIST MUSIC - album options -->
+					<div class="drop--down">
+						<label>Album:</label>
+						<br>
+						<select name="albumSel">
+							<option value="" selected disabled="disabled">Options</option>
+							<option value="Violator">Violator</option>
+							<option value="Pretty Hate Machine">Pretty Hate Machine</option>
+							<option value="Undertow">Undertow</option>
+							<option value="Badmotorfinger">Badmotorfinger</option>
+							<option value="Wish">Wish</option>
+						</select>	
+					</div>
+					<!-- LIST MUSIC - genre check boxes-->
+					<div class="check--box">
+						<label>Genre:</label>
+						<br>
+						<!-- LIST MUSIC - option section -->
+						<div class="optSection">
+							<div class="optLine">
+								<div class="chkOpt left">
+									<input type="checkbox" name="chkGenre" value="Synthpop">
+									<span>Synthpop</span>
+								</div>
+								<div class="chkOpt right">
+									<input type="checkbox" name="chkGenre" value="Industrial">	
+									<span>Industrial</span>
+								</div>
 							</div>
-							<div class="chkOpt right">
-								<input type="checkbox" name="chkGenre" value="Industrial">	
-								<span>Industrial</span>
+							<!-- LIST MUSIC - option line -->
+							<div class="optLine">
+								<div class="chkOpt left">
+									<input type="checkbox" name="chkGenre" value="Alternative ">
+									<span>Alternative</span>
+								</div>
+								<div class="chkOpt right">
+									<input type="checkbox" name="chkGenre" value="Grunge">
+									<span>Grunge</span>
+								</div>
 							</div>
-						</div>
-
-						<div class="optLine">
-							<div class="chkOpt left">
-								<input type="checkbox" name="chkGenre" value="Alternative ">
-								<span>Alternative</span>
-							</div>
-							<div class="chkOpt right">
-								<input type="checkbox" name="chkGenre" value="Grunge">
-								<span>Grunge</span>
-							</div>
-						</div>
-
-						<div class="optLine">
-							<div class="chkOpt left">
-								<input type="checkbox" name="chkGenre" value="Goth Rock">
-								<span>Goth Rock</span>
-							</div>
-							<div class="chkOpt right">
-								<input type="checkbox" name="chkGenre" value="80s Pop">
-								<span>80s Pop</span>
+							<!-- LIST MUSIC - option line -->
+							<div class="optLine">
+								<div class="chkOpt left">
+									<input type="checkbox" name="chkGenre" value="Goth Rock">
+									<span>Goth Rock</span>
+								</div>
+								<div class="chkOpt right">
+									<input type="checkbox" name="chkGenre" value="80s Pop">
+									<span>80s Pop</span>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<!-- filter button -->
-				<div class="submitBtn">
-					<input type="submit" value="Filter">
-				</div>
-
-			</form>
-		</section>
-
-		<!----------- SONG LIST ---------->
-		<section class="song--list">
-			<ul id = "newSongs">
-				<li>
-					<span>Enjoy the Silence</span>
-					<p>Depeche Mode | Violator | Synthpop</p>
-				</li>
+					<!-- LIST MUSIC - filter button -->
+					<div class="submitBtn">
+						<input type="submit" value="Filter">
+					</div>
+				</form>
+			</section>
+			<!-- LIST MUSIC - song list -->
+			<section class="song--list">
+				<ul id="newSongs">
 					<li>
-					<span>Down In It</span>
-					<p>Nine Inch Nails | Pretty Hate Machine | Industrial</p>
-				</li>
+						<span>Enjoy the Silence</span>
+						<p>Depeche Mode | Violator | Synthpop</p>
+					</li>
+						<li>
+						<span>Down In It</span>
+						<p>Nine Inch Nails | Pretty Hate Machine | Industrial</p>
+					</li>
+						<li>
+						<span>Swamp Song</span>
+						<p>Tool | Undertow | Alternative</p>
+					</li>
 					<li>
-					<span>Swamp Song</span>
-					<p>Tool | Undertow | Alternative</p>
-				</li>
-				<li>
-					<span>Rusty Cage</span>
-					<p>Soundgarden | Badmotorfinger | Grunge</p>
-				</li>
-				<li>
-					<span>Friday I'm In Love</span>
-					<p>The Cure | Wish | Goth Rock</p>
-				</li>
+						<span>Rusty Cage</span>
+						<p>Soundgarden | Badmotorfinger | Grunge</p>
+					</li>
+					<li>
+						<span>Friday I'm In Love</span>
+						<p>The Cure | Wish | Goth Rock</p>
+					</li>
+				</ul>
+			</section>
+		</article>
+		<!-- LIST MUSIC END -->
 
-			</ul>
-		</section>
-
-		<section>
-
+		<!-- ADD MUSIC START -->
+		<article id="add-music-view" class="hidden add-music-view">
+			<fieldset>
+	      <label for="song-name" >Song Name:</label>
+	      <input type="text" name="song-name">
+	      <label for="artist">Artist:</label>
+				<input type="text" name="artist">
+	      <label for="album">Album:</label>
+				<input type="text" name="album">
+	    </fieldset>
+	    <button>Add</button>
+		</article>
+		<!-- ADD MUSIC END -->
 	</div>
-	<script src="songs.js"></script>
+
+	<script type="text/javascript" src="list.js"></script>
+  <script type="text/javascript" src="add.js"></script>
+	<script type="text/javascript" src="songs.js"></script>
 </body>
 </html>

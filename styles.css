@@ -1,24 +1,4 @@
 /*---------- MAIN ----------*/
-body {
-	font-family: Arial, Helvetica, sans-serif;
-}
-
-a {
-	text-decoration: none;
-}
-
-.wrapper {
-   margin: 0 auto;
-   max-width: 800px;
-}
-
-.left {
-	float:left;
-}
-
-.right {
-	float:right;
-}
 
 .visible {
   display: block;
@@ -28,52 +8,11 @@ a {
   display: none;
 }
 
-/*---------- HEADER ----------*/
-header {
-	border: 2px solid #000;
-	background-color: #FFB4B0;
-	margin-bottom: 10px;
-}
-
-.nav {
-	height: 20px;
-	padding: 10px;
-}
-
-.nav > li {
-	float: left;
-	list-style-type: none;
-	margin: 0 10px;
-}
-
-.nav li:nth-child(n+2)::before {
-  content: "|";
-  margin-right: 16px;
-}
-
-x.nav li::after:last-child {
-  content: " ";
-}
-
-.nav a:link {
-	color: #000;
-}
-
-.nav a:visited {
-	color: #000;
-}
-
-.nav a:hover {
-	color: #fff;
-}
-
 /*----------------- LIST MUSIC VIEW START -----------------*/
 /*---------- LEFT CONTROLS ----------*/
 .left--controls {
-	background-color: #4DD7FA;
-	border: 2px solid #000;
-	float: left;
-	padding: 20px;
+  border: 1px solid #000;
+  padding: 20px;
 }
 
 .slider label{
@@ -84,72 +23,24 @@ x.nav li::after:last-child {
   width: 176px;;
 }
 
-.drop--down {
-  margin: 8px 0;
-}
-
-.drop--down select {
-	width: 176px;
-  height: 30px;
-	margin: 6px 0 20px;
-}
-
-.check--box label {
-	line-height: 2;
-}
-
-.left--controls input[type=checkbox] {
-    display: inline;
-    margin: 0;
-}
-
-.chkOpt {
-	width: 90px;
-}
-
-.chkOpt span{
-	font-size: .75em;
-}
-
-.submitBtn {
-	text-align: center;
-}
-
-.submitBtn input {
-	width: 100px;
-	height: 30px;
-	margin-top: 22px;
-}
-
 /*---------- SONG LIST ----------*/
 .song--list {
-	background-color: #FEFAC0;
-	border: 2px solid #000;
-	float: right;
-	padding: 20px;
-	width: 518px;
+  border: 1px solid #000;
 }
 
-.song--list span {
-	color: #785616;
-	font-size: 1.3em;
-}
-
-.song--list ul {
-	margin: 0;
-	padding: 0;
+.song--list p {
+  color: #785616;
+  font-size: 1.3em;
+  margin-bottom:0;
 }
 
 .song--list li {
-	list-style-type: none;
+  margin-bottom:14px;
 }
 
 /*----------------- LIST MUSIC VIEW END -----------------*/
 
 /*----------------- ADD MUSIC VIEW START -----------------*/
-.add-music-view {
-  width: 300px;
-  margin: 0 auto;
-}
+
 
 /*----------------- ADD MUSIC VIEW END -----------------*/

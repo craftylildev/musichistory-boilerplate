@@ -1,3 +1,5 @@
+// toggle between List Music View and Add Music View
+
 var listLink = document.getElementById("list-music-link");
 var listView = document.getElementById("list-music-view");
 

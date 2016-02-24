@@ -4,139 +4,162 @@
 <head>
   <meta charset="utf-8">
   <title>Music History</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-	<div class="wrapper">	
-		<!----------- TOP HEADER ---------->
-		<header>
-			<nav>
-				<ul class="nav">
-					<li><a href="#">View Music</a></li>
-					<li><a href="#">Add Music</a></li>
-					<li><a href="#">Profile</a></li>
-				</ul>
-			</nav>
-		</header>
+  <div class="container">
+    
+    <nav>
+      <ul class="nav nav-pills">
+        <li role="presentation"><a  id ="list-music-link" href="#">List Music</a></li>
+        <li role="presentation"><a id ="add-music-link" href="#">Add Music</a></li>
+      </ul>
+    </nav>
+<!-- LIST MUSIC START -->
+    <div class="row" id="list-music-view">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-3 left--controls">
+<!-- LIST MUSIC - song length slider -->
+            <div class="slider">
+              <label>Song Length</label>
+              <br>
+              <input id="slider1" type="range" min="100" max="500" step="10" />
+            </div>
+<!-- LIST MUSIC - artist options -->
+            <div class="artistAlbumDrop">
+              <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Artist <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Depeche Mode</a></li>
+                  <li><a href="#">Nine Inch Nails</a></li>
+                  <li><a href="#">Tool</a></li>
+                  <li><a href="#">Soundgarden</a></li>
+                  <li><a href="#">The Cure</a></li>
+                </ul>
+              </div>
+<!-- LIST MUSIC - album options -->
+              <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Album <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Violator</a></li>
+                  <li><a href="#">Pretty Hate Machine</a></li>
+                  <li><a href="#">Undertow</a></li>
+                  <li><a href="#">Badmotorfinger</a></li>
+                  <li><a href="#">Wish</a></li>
+                </ul>
+              </div>
+            </div>  
+<!-- LIST MUSIC - genre check boxes-->
+            <div class="genreChkBox">
+              <label>Genre</label>
+                <div class="checkbox">
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox1" value="Synthpop"> Synthpop
+                  </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="Industrial"> Industrial
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox1" value="Alternative"> Alternative
+                  </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="Grunge"> Grunge
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox1" value="GothRock"> Goth Rock
+                  </label>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="80sPop"> 80's Pop
+                  </label>
+                </div>
+            </div>
+<!-- LIST MUSIC SUBMIT BUTTON -->
+            <button type="button" class="btn btn-default">Submit</button>
+          </div>
+<!-- LIST MUSIC SONG LIST -->
+          <div class="col-md-8 col-md-offset-1 song--list">
 
-		<!----------- LEFT CONTROLS ---------->
-		<section class="left--controls">
-			<form action="#" method="post">
-				<!-- song length slider -->
-				<div class="slider">
-					<label>Song length:</label>
-					<br>
+            <ul id="default-songs" class="list-unstyled">
+              <li>
+                <p class="list-song">Enjoy the Silence</p>
+                <span class="list-artist">Depeche Mode</span>
+                <span class="list-album">Violator</span>
+                <span class="list-genre">Synthpop</span>
+              </li>
+              <li>
+                <p class="list-song">Down In It</p>
+                <span class="list-artist">Nine Inch Nails</span>
+                <span class="list-album">Down In It</span>
+                <span class="list-genre">Industrial</span>
+              </li>
+              <li>
+                <p class="list-song">Swamp Song</p>
+                <span class="list-artist">Tool</span>
+                <span class="list-album">Undertow</span>
+                <span class="list-genre">Alternative</span>   
+              </li>
+              <li>
+                <p class="list-song">Rusty Cage</p>
+                <span class="list-artist">Soundgarden</span>
+                <span class="list-album">Badmotorfinger</span>
+                <span class="list-genre">Grunge</span>
+              </li>
+              <li>
+                <p class="list-song">Friday I'm in Love</p>
+                <span class="list-artist">The Cure</span>
+                <span class="list-album">Wish</span>
+                <span class="list-genre">Goth Rock</span>    </li>
+            </ul>
+            <ul id="new-songs" class="list-unstyled">
+            </ul>
 
-					<input id="slider1" type="range" min="100" max="500" step="10" />
-				</div>
+          </div>
+        </div>
 
-				<!-- artist options -->
-				<div class="drop--down">
-					<label>Artist:</label>	
-					<br>
-					<select name="artistSel">
-						<option value="" selected disabled="disabled">Options</option>
-						<option value="Depeche Mode">Depeche Mode</option>
-						<option value="Nine Inch Nails">Nine Inch Nails</option>
-						<option value="Tool">Tool</option>
-						<option value="Soundgarden">Soundgarden</option>
-						<option value="The Cure">The Cure</option>
-					</select>
-				</div>
-					
-				<!-- album options -->
-				<div class="drop--down">
-					<label>Album:</label>
-					<br>
-					<select name="albumSel">
-						<option value="" selected disabled="disabled">Options</option>
-						<option value="Violator">Violator</option>
-						<option value="Pretty Hate Machine">Pretty Hate Machine</option>
-						<option value="Undertow">Undertow</option>
-						<option value="Badmotorfinger">Badmotorfinger</option>
-						<option value="Wish">Wish</option>
-					</select>	
-				</div>
+      </div>
+    </div>
+<!-- LIST MUSIC END -->
+<!-- ADD MUSIC START -->
+    <div class="row hidden" id="add-music-view">
+      <!-- <div class="col-md-12"> -->
+        <div class="col-md-4 col-md-offset-4">
+          <div class="add-input-row">
+            <label for="song-name">Song Name:</label>
+            <input id="input-song" type="text" name="song-name">
+          </div>
+          <div class="add-input-row">
+            <label for="artist">Artist:</label>
+            <input id="input-artist" type="text" name="artist">
+          </div>
+          <div class="add-input-row">
+            <label for="album">Album:</label>
+            <input id="input-album" type="text" name="album">
+          </div>
+          <div class="add-button">
+            <button id="add-button">Add Information</button>
+          </div>
+        </div>
+      <!-- </div> -->
+    </div>
 
-				<!-- genre check boxes-->
-				<div class="check--box">
-					<label>Genre:</label>
-					<br>
-					
-					<div class="optSection">
-						<div class="optLine">
-							<div class="chkOpt left">
-								<input type="checkbox" name="chkGenre" value="Synthpop">
-								<span>Synthpop</span>
-							</div>
-							<div class="chkOpt right">
-								<input type="checkbox" name="chkGenre" value="Industrial">	
-								<span>Industrial</span>
-							</div>
-						</div>
+  </div>
 
-						<div class="optLine">
-							<div class="chkOpt left">
-								<input type="checkbox" name="chkGenre" value="Alternative ">
-								<span>Alternative</span>
-							</div>
-							<div class="chkOpt right">
-								<input type="checkbox" name="chkGenre" value="Grunge">
-								<span>Grunge</span>
-							</div>
-						</div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="list.js"></script>
+  <script type="text/javascript" src="add.js"></script>
+  <script type="text/javascript" src="songs.js"></script>
 
-						<div class="optLine">
-							<div class="chkOpt left">
-								<input type="checkbox" name="chkGenre" value="Goth Rock">
-								<span>Goth Rock</span>
-							</div>
-							<div class="chkOpt right">
-								<input type="checkbox" name="chkGenre" value="80s Pop">
-								<span>80s Pop</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- filter button -->
-				<div class="submitBtn">
-					<input type="submit" value="Filter">
-				</div>
-
-			</form>
-		</section>
-
-		<!----------- SONG LIST ---------->
-		<section class="song--list">
-			<ul id = "newSongs">
-				<li>
-					<span>Enjoy the Silence</span>
-					<p>Depeche Mode | Violator | Synthpop</p>
-				</li>
-					<li>
-					<span>Down In It</span>
-					<p>Nine Inch Nails | Pretty Hate Machine | Industrial</p>
-				</li>
-					<li>
-					<span>Swamp Song</span>
-					<p>Tool | Undertow | Alternative</p>
-				</li>
-				<li>
-					<span>Rusty Cage</span>
-					<p>Soundgarden | Badmotorfinger | Grunge</p>
-				</li>
-				<li>
-					<span>Friday I'm In Love</span>
-					<p>The Cure | Wish | Goth Rock</p>
-				</li>
-
-			</ul>
-		</section>
-
-		<section>
-
-	</div>
-	<script src="songs.js"></script>
 </body>
 </html>

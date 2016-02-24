@@ -1,70 +1,31 @@
 /*---------- MAIN ----------*/
-body {
-	font-family: Arial, Helvetica, sans-serif;
+
+.visible {
+  display: block;
 }
 
-a {
-	text-decoration: none;
+.hidden {
+  display: none;
 }
 
-.wrapper {
-   margin: 0 auto;
-   max-width: 800px;
-}
-
-.left {
-	float:left;
-}
-
-.right {
-	float:right;
-}
-
-/*---------- HEADER ----------*/
-header {
-	border: 2px solid #000;
-	background-color: #FFB4B0;
-	margin-bottom: 10px;
+nav {
+  margin: 10px 0;
+  border-bottom: 2px solid #049B9C;
 }
 
 .nav {
-	height: 20px;
-	padding: 10px;
+  margin-bottom: 10px;
 }
 
-.nav > li {
-	float: left;
-	list-style-type: none;
-	margin: 0 10px;
+.nav-pills>li>a {
+  font-size: 1.25em;
+  color: #049B9C;
 }
-
-.nav li:nth-child(n+2)::before {
-  content: "|";
-  margin-right: 16px;
-}
-
-x.nav li::after:last-child {
-  content: " ";
-}
-
-.nav a:link {
-	color: #000;
-}
-
-.nav a:visited {
-	color: #000;
-}
-
-.nav a:hover {
-	color: #fff;
-}
-
+/*----------------- LIST MUSIC VIEW START -----------------*/
 /*---------- LEFT CONTROLS ----------*/
 .left--controls {
-	background-color: #4DD7FA;
-	border: 2px solid #000;
-	float: left;
-	padding: 20px;
+/*  border: 1px solid #000;*/  
+  padding: 20px;
 }
 
 .slider label{
@@ -72,67 +33,59 @@ x.nav li::after:last-child {
 }
 
 .slider input{
-  width: 176px;;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
-.drop--down {
-  margin: 8px 0;
+.artistAlbumDrop {
+  margin-bottom: 20px;
 }
 
-.drop--down select {
-	width: 176px;
-  height: 30px;
-	margin: 6px 0 20px;
-}
-
-.check--box label {
-	line-height: 2;
-}
-
-.left--controls input[type=checkbox] {
-    display: inline;
-    margin: 0;
-}
-
-.chkOpt {
-	width: 90px;
-}
-
-.chkOpt span{
-	font-size: .75em;
-}
-
-.submitBtn {
-	text-align: center;
-}
-
-.submitBtn input {
-	width: 100px;
-	height: 30px;
-	margin-top: 22px;
+.artistAlbumDrop .btn {
+  width: 124px;
 }
 
 /*---------- SONG LIST ----------*/
 .song--list {
-	background-color: #FEFAC0;
-	border: 2px solid #000;
-	float: right;
-	padding: 20px;
-	width: 518px;
-}
-
-.song--list span {
-	color: #785616;
-	font-size: 1.3em;
-}
-
-.song--list ul {
-	margin: 0;
-	padding: 0;
+/*  border: 1px solid #000;*/
+  padding: 20px;
 }
 
 .song--list li {
-	list-style-type: none;
+  margin-bottom:14px;
 }
 
-/*---------- ----------*/
+.song--list p {
+  color: #049B9C;
+  font-size: 1.3em;
+  margin-bottom:0;
+}
+
+.song--list span:nth-child(n+3)::before {
+  content: "|";
+  margin: 0 10px;
+}
+
+.list-artist {
+  font-weight: bold;
+}
+
+.list-album {
+  font-style: italic;
+}
+
+/*----------------- LIST MUSIC VIEW END -----------------*/
+
+/*----------------- ADD MUSIC VIEW START -----------------*/
+.add-input-row {
+  margin: 10px 0;
+}
+.add-input-row input {
+  float: right;
+  width: 70%;
+}
+
+#add-button {
+  width: 100%;
+}
+/*----------------- ADD MUSIC VIEW END -----------------*/

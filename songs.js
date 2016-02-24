@@ -25,7 +25,7 @@ document.querySelector("body").addEventListener("click", function(event) {
   }
 });
 
-function loadPlayList () {
+function displayPlayList () {
   var playListData = JSON.parse(this.responseText);
   // console.log("playListData", playListData.track_list);
   var defaultOutput = document.getElementById("default-songs");  
@@ -43,26 +43,20 @@ function loadPlayList () {
       <button id="deleteTrack" class="deleteTrack">x</button>
     </li>`;    
   }
-  defaultOutput.innerHTML = defaultPlayList;
+  defaultOutput.innerHTML += defaultPlayList;
 }
 
-var playListLoader = new XMLHttpRequest();
-playListLoader.addEventListener("load", loadPlayList);
-playListLoader.open("GET", "songList1.json");
-playListLoader.send();
+function loadPlayList(fileToLoad) {
+  var playListLoader = new XMLHttpRequest();
+  playListLoader.addEventListener("load", displayPlayList);
+  playListLoader.open("GET", fileToLoad);
+  playListLoader.send();
+}
+loadPlayList("songList1.json");
 
 var loadMoreTracks = document.getElementById("loadMoreTracks");
 
-
-loadMoreTracks.addEventListener("click",  function loadPlayList2 () {
-  console.log("test");
-//   var playListLoader2 = new XMLHttpRequest();
-
-//   playListLoader2.addEventListener("load", function () {
-//     inventory = JSON.parse(this.responseText);
-//   });
-//   playListLoader2.open("GET", "songList2.json");
-//   playListLoader2.send();
-// }
-
-  });
+loadMoreTracks.addEventListener("click", function () {
+  // console.log("test");
+  loadPlayList("songList2.json");
+});

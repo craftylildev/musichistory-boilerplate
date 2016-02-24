@@ -88,6 +88,16 @@ nav {
   float: right;
 }
 
+.loadMoreTracks{
+  background: #049B9C;
+  color: #fff;
+  border: none;
+  padding: 6px;
+  width: 100%;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
 /*----------------- LIST MUSIC VIEW END -----------------*/
 
 /*----------------- ADD MUSIC VIEW START -----------------*/

@@ -8,10 +8,23 @@
   display: none;
 }
 
+nav {
+  margin: 10px 0;
+  border-bottom: 2px solid #049B9C;
+}
+
+.nav {
+  margin-bottom: 10px;
+}
+
+.nav-pills>li>a {
+  font-size: 1.25em;
+  color: #049B9C;
+}
 /*----------------- LIST MUSIC VIEW START -----------------*/
 /*---------- LEFT CONTROLS ----------*/
 .left--controls {
-  border: 1px solid #000;
+/*  border: 1px solid #000;*/  
   padding: 20px;
 }
 
@@ -20,27 +33,59 @@
 }
 
 .slider input{
-  width: 176px;;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.artistAlbumDrop {
+  margin-bottom: 20px;
+}
+
+.artistAlbumDrop .btn {
+  width: 124px;
 }
 
 /*---------- SONG LIST ----------*/
 .song--list {
-  border: 1px solid #000;
-}
-
-.song--list p {
-  color: #785616;
-  font-size: 1.3em;
-  margin-bottom:0;
+/*  border: 1px solid #000;*/
+  padding: 20px;
 }
 
 .song--list li {
   margin-bottom:14px;
 }
 
+.song--list p {
+  color: #049B9C;
+  font-size: 1.3em;
+  margin-bottom:0;
+}
+
+.song--list span:nth-child(n+3)::before {
+  content: "|";
+  margin: 0 10px;
+}
+
+.list-artist {
+  font-weight: bold;
+}
+
+.list-album {
+  font-style: italic;
+}
+
 /*----------------- LIST MUSIC VIEW END -----------------*/
 
 /*----------------- ADD MUSIC VIEW START -----------------*/
+.add-input-row {
+  margin: 10px 0;
+}
+.add-input-row input {
+  float: right;
+  width: 70%;
+}
 
-
+#add-button {
+  width: 100%;
+}
 /*----------------- ADD MUSIC VIEW END -----------------*/

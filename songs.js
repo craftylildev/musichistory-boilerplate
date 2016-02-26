@@ -1,62 +1,72 @@
+$(document).ready(function() { 
 
-//ADD NEW SONGS
-document.getElementById("add-button").addEventListener("click", function() {
-  // get text input values from Add Music View
-  var inputSong = document.getElementById("input-song").value;
-  var inputArtist = document.getElementById("input-artist").value;
-  var inputAlbum = document.getElementById("input-album").value;
-  // add new songs/artists/albums
-  var newSongs = document.getElementById("new-songs");
+// ADD NEW SONGS
+  $("#add-button").click(function() {
+    // get text input values from Add Music View
+    var inputSong = $("#input-song").val();
+    var inputArtist = $("#input-artist").val();
+    var inputAlbum = $("#input-album").val();
+    var inputGenre = $("#input-genre").val();
 
-  newSongs.innerHTML += 
-  `<li>
-    <p class="list-song">${inputSong}</p>
-    <span class="list-artist">${inputArtist}</span>
-    <span class="list-album">${inputAlbum}</span>          
-    <button id="deleteTrack" class="deleteTrack">x</button>
-  </li>`;
-});
+    // add new songs/artists/albums from input values
+    $("#new-songs").append(
+      `<li class="listTrack">
+        <p class="listSong">${inputSong}</p>
+        <span class="listArtist">${inputArtist}</span>
+        <span class="listAlbum">${inputAlbum}</span>          
+        <span class="listGenre">${inputGenre}</span>          
+        <button class="deleteTrack">x</button>
+      </li>`
+      );
+      deleteButton();
+  });
 
-document.querySelector("body").addEventListener("click", function(event) {
-  // console.log(event);
-  if (event.target.className === "deleteTrack") {
-    // console.log(event.target.parentNode);
-    event.target.parentNode.remove();
+  function displayPlayList (playListData) {
+    // console.log("playListData", playListData.track_list);
+    var defaultPlayList = "";
+
+      // build DOM string
+      playListData.track_list.forEach(function(currentTrack) {
+        // console.log("playListData", playListData.track_list);
+        // console.log("currentTrack", currentTrack);
+        
+        defaultPlayList +=     
+        `<li class="listTrack">
+          <p class="listSong">${currentTrack.song}</p>
+          <span class="listArtist">${currentTrack.artist}</span>
+          <span class="listAlbum">${currentTrack.album}</span>
+          <span class="listGenre">${currentTrack.genre}</span>
+          <button class="deleteTrack">x</button>
+        </li>`;
+    
+      });
+    
+    $("#default-songs").append(defaultPlayList);
+    deleteButton();
   }
-});
 
-function displayPlayList () {
-  var playListData = JSON.parse(this.responseText);
-  // console.log("playListData", playListData.track_list);
-  var defaultOutput = document.getElementById("default-songs");  
-  var defaultPlayList = "";
-
-  for (var i = 0; i < playListData.track_list.length; i++){
-    // console.log("playListData", playListData.track_list[i]);
-    var currentTrack = playListData.track_list[i];
-    defaultPlayList +=     
-    `<li>
-      <p class="list-song">${currentTrack.song}</p>
-      <span class="list-artist">${currentTrack.artist}</span>
-      <span class="list-album">${currentTrack.album}</span>
-      <span class="list-genre">${currentTrack.genre}</span>
-      <button id="deleteTrack" class="deleteTrack">x</button>
-    </li>`;    
+  // load any json playlist file
+  function loadPlayList(fileToLoad) {
+    $.ajax({
+      url: fileToLoad
+    }).done(function(playListData) {
+      // console.log(playListData);
+      displayPlayList(playListData);
+    });
   }
-  defaultOutput.innerHTML += defaultPlayList;
-}
+  // call playList1
+  loadPlayList("playList1.json");
 
-function loadPlayList(fileToLoad) {
-  var playListLoader = new XMLHttpRequest();
-  playListLoader.addEventListener("load", displayPlayList);
-  playListLoader.open("GET", fileToLoad);
-  playListLoader.send();
-}
-loadPlayList("songList1.json");
+  // click to load & call 2nd json playlist
+  $("#loadMoreTracks").click(function() {
+    loadPlayList("playList2.json");
+  });
 
-var loadMoreTracks = document.getElementById("loadMoreTracks");
+  // delete 'this' track from DOM
+  function deleteButton() {
+    $(".deleteTrack").click(function() {
+      $(this).closest("li").remove();    
+    });
+  }  
 
-loadMoreTracks.addEventListener("click", function () {
-  // console.log("test");
-  loadPlayList("songList2.json");
 });

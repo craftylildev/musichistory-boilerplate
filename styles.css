@@ -1,13 +1,5 @@
 /*---------- MAIN ----------*/
 
-.visible {
-  display: block;
-}
-
-.hidden {
-  display: none;
-}
-
 nav {
   margin: 10px 0;
   border-bottom: 2px solid #049B9C;
@@ -69,11 +61,11 @@ nav {
   margin: 0 10px;
 }
 
-.list-artist {
+.listArtist {
   font-weight: bold;
 }
 
-.list-album {
+.listAlbum {
   font-style: italic;
 }
 
@@ -101,6 +93,10 @@ nav {
 /*----------------- LIST MUSIC VIEW END -----------------*/
 
 /*----------------- ADD MUSIC VIEW START -----------------*/
+#add-music-view{
+  display: none;
+}
+
 .add-input-row {
   margin: 10px 0;
 }

@@ -1,12 +1,9 @@
 // toggle between List Music View and Add Music View
+$(document).ready(function() { 
 
-var listLink = document.getElementById("list-music-link");
-var listView = document.getElementById("list-music-view");
+  $("#list-music-link").click(function() {
+    $("#add-music-view").hide();
+    $("#list-music-view").show();
+  });
 
-listLink.addEventListener("click", function(event) {
-  event.preventDefault();
-  addView.classList.add("hidden");
-
-  listView.classList.add("visible");
-  listView.classList.remove("hidden");
 });

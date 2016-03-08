@@ -1,3 +1,5 @@
+"use strict";
+
 // toggle between List Music View and Add Music View
 $(document).ready(function() { 
 

@@ -1,0 +1,25 @@
+$primary-color: #049B9C;
+$secondary-color: #DCEEEE;
+
+/*---------- MAIN ----------*/
+nav {
+  margin: 10px 0;
+  border-bottom: 2px solid $primary-color;
+}
+
+.nav {
+  margin-bottom: 10px;
+}
+
+.nav-pills{
+  li{
+    a {
+      font-size: 1.25em;
+      color: $primary-color;
+      }
+    }
+}
+
+
+@import 'list-music';
+@import 'add-music';

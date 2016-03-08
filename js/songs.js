@@ -1,3 +1,5 @@
+"use strict";
+
 $(document).ready(function() { 
 
 // ADD NEW SONGS
@@ -55,11 +57,11 @@ $(document).ready(function() {
     });
   }
   // call playList1
-  loadPlayList("playList1.json");
+  loadPlayList("json/playList1.json");
 
   // click to load & call 2nd json playlist
   $("#loadMoreTracks").click(function() {
-    loadPlayList("playList2.json");
+    loadPlayList("json/playList2.json");
   });
 
   // delete 'this' track from DOM

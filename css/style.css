@@ -3,6 +3,9 @@ nav {
   margin: 10px 0;
   border-bottom: 2px solid #049B9C; }
 
+nav ul {
+  display: inline-block; }
+
 .nav {
   margin-bottom: 10px; }
 
@@ -10,10 +13,52 @@ nav {
   font-size: 1.25em;
   color: #049B9C; }
 
+/*---------- LOGIN ----------*/
+.login-area {
+  margin-top: 40px; }
+
+.login-header {
+  padding: 4px 20px;
+  border-radius: 10px 10px 0 0;
+  background-color: #049B9C; }
+
+.login-bottom {
+  padding: 20px;
+  background-color: #DCEEEE;
+  border-radius: 0 0 10px 10px;
+  text-align: right; }
+
+.login-area h2 {
+  font-size: 1.5em;
+  color: #fff;
+  margin: 8px 0; }
+
+.login-area p {
+  color: #fff; }
+
+.login-area input {
+  margin: 4px 0; }
+
+.login-btn {
+  background: #049B9C;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  padding: 4px 12px;
+  margin-top: 6px; }
+
+.logout-btn {
+  background: #049B9C;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  padding: 4px 12px;
+  margin-top: 10px;
+  float: right; }
+
 /*---------- LIST MUSIC ----------*/
 /*---------- LEFT CONTROLS ----------*/
 .left--controls {
-  /*  border: 1px solid #000;*/
   padding: 20px; }
 
 .slider label {
@@ -31,7 +76,6 @@ nav {
 
 /*---------- SONG LIST ----------*/
 .song--list {
-  /*  border: 1px solid #000;*/
   padding: 20px; }
 
 .song--list li {
@@ -75,9 +119,6 @@ nav {
   font-weight: bold; }
 
 /*---------- ADD MUSIC ----------*/
-#add-music-view {
-  display: none; }
-
 .add-input-row {
   margin: 10px 0; }
 
@@ -87,3 +128,9 @@ nav {
 
 #add-button {
   width: 100%; }
+
+/* hide at login */
+#add-music-view,
+#list-music-view,
+#navigation-items {
+  display: none; }

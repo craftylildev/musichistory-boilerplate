@@ -1,10 +1,14 @@
-$primary-color: #049B9C;
-$secondary-color: #DCEEEE;
+@import 'variables';
 
 /*---------- MAIN ----------*/
 nav {
   margin: 10px 0;
   border-bottom: 2px solid $primary-color;
+}
+
+nav ul {
+  display: inline-block;
+  
 }
 
 .nav {
@@ -21,5 +25,8 @@ nav {
 }
 
 
+
+@import 'login';
 @import 'list-music';
 @import 'add-music';
+@import 'hidden';

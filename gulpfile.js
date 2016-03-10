@@ -2,6 +2,7 @@ var gulp = require('gulp');
     var jshint = require('gulp-jshint');
     var watch = require('gulp-watch');
     var sass = require('gulp-sass');
+    // var Firebase = require("firebase");    
     gulp.task('default', ['lint', 'watch', 'sassify']);
 
     gulp.task('watch', function() {
